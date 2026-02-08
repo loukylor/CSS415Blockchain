@@ -1,0 +1,66 @@
+---
+import SelectableLink from "./SelectableLink.astro";
+import HomeSimple from "iconoir/icons/home-simple.svg"
+import Page from "iconoir/icons/page.svg"
+import DataTransferBoth from "iconoir/icons/data-transfer-both.svg"
+---
+
+<nav class="sidebar">
+    <SelectableLink class="link" href="./">
+        <HomeSimple width="3rem" height="3rem" stroke-width="1.2" class="icon" />
+        <span class="text">Home</span>
+    </SelectableLink>
+    <SelectableLink class="link" href="./design-rationale">
+        <Page width="3rem" height="3rem" stroke-width="1.2" class="icon" />
+        <span class="text">
+            Design
+            <br />
+            Rationale
+        </span>
+    </SelectableLink>
+    <SelectableLink class="link" href="./tradeoff-analysis">
+        <DataTransferBoth width="3rem" height="3rem" stroke-width="1.2" class="icon" />
+        <span class="text">
+            Tradeoff
+            <br />
+            Analysis
+        </span>
+    </SelectableLink>
+</nav>
+<style>
+    .sidebar {
+        background-color: rgb(var(--color-surface-container-high));
+        width: 6rem;
+        position: sticky;
+    }
+
+    .link {
+        display: block;
+        margin: 1rem 0.5rem;
+        padding: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: rgb(var(--color-on-container));
+        text-decoration: none;
+        border-radius: 10%;
+    }
+
+    .link:hover {
+        background-color: rgba(var(--color-surface-tint) / 50%);
+    }
+
+    .selected {
+        background-color: rgba(var(--color-surface-tint) / 20%);
+    }
+    
+    .icon {
+        display: block;
+    }
+
+    .text {
+        align-items: center;
+        text-align: center;
+    }
+</style>

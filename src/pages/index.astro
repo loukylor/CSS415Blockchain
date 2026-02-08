@@ -1,0 +1,22 @@
+---
+import Chain from "../components/Chain"
+import Layout from "../layouts/Layout.astro"
+import PlusCircle from "iconoir/icons/plus-circle.svg"
+---
+<Layout>
+    <h1>Demo</h1>
+    <p>
+        This page contains the demo for the blockchain. It's a simple, non-distributed chain that uses a custom hashing algorithm. 
+        It's mainly for learning purposes and definitely not secure for actual cryptographic work. 
+        The blocks each hold the hash to the previous value, a nonce, and some text data. All this is included in the hash.
+    </p>
+    <p>
+        To get started, press the <PlusCircle /> button below.
+    </p>
+    <p>
+        After creating a block, you can edit its contents, then complete the Proof of Work by mining. 
+        Once the block is done mining, the outline will turn from red into gray, at which point, the block is fully in the chain.
+        If you'd like to stop mining, simply change any input field on the block that is mining.
+    </p>
+    <Chain client:only />
+</Layout>

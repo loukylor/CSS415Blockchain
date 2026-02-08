@@ -1,0 +1,27 @@
+---
+import SelectableLink from "./SelectableLink.astro";
+
+interface Props {
+    href: string
+}
+---
+
+<SelectableLink class="link" href={Astro.props.href}>
+    <slot name="icon" />
+    <slot name="text" />
+</SelectableLink>
+
+<style>
+    .link {
+        display: block;
+    }
+
+    .icon {
+        width: 100%;
+        display: block;
+    }
+
+    .text {
+
+    }
+</style>

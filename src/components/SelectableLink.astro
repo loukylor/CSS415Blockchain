@@ -1,0 +1,17 @@
+---
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes { 
+    selectedClass?: string
+}
+
+const selectedClass = Astro.props.selectedClass ?? "selected"
+if (Astro.props.href && Astro.url.toString() === new URL(Astro.props.href, Astro.url).toString()) {
+    if (Astro.props.class) {
+        Astro.props.class += " " + selectedClass
+    } else {
+        Astro.props.class = selectedClass
+    }
+}
+---
+<a {...Astro.props}>
+    <slot />
+</a>

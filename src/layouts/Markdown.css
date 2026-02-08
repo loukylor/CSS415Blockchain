@@ -1,0 +1,7 @@
+a {
+    color: rgb(var(--color-primary));
+}
+
+pre {
+    padding: 0.5rem;
+}
